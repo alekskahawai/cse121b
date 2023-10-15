@@ -149,7 +149,7 @@ dt {
 }
 
 dt::before {
-    content: "ðŸ˜ï¸ ";
+    content: "";
 }
 
 dd {
