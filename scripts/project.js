@@ -21,14 +21,18 @@ const displayTemples = templeList => {
         let article = document.createElement('article');
 
         let h3 = document.createElement('h3');
-        h3.textContent = item.properties.place;
+        h3.textContent = `Magnitude: ${item.properties.mag}`;
 
-        let image = document.createElement('img');
+        let image = document.createElement('iframe');
         image.setAttribute('src', item.imageUrl);
         image.setAttribute('alt', item.location);
 
+        let place = document.createElement('p');
+        place.textContent = item.properties.place
+
         article.appendChild(h3);
         article.appendChild(image);
+        article.appendChild(place);
 
         templesElement.appendChild(article);
     });
