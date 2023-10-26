@@ -8,7 +8,7 @@ const getData = async () => {
 
     data = await response.json();
 
-    // console.log(data.features);
+    console.log(data.features);
     displayTemples(data.features);
 }
 
@@ -45,7 +45,6 @@ const displayTemples = templeList => {
         image.setAttribute('allowfullscreen', "");
         image.setAttribute('loading', "lazy");
         image.setAttribute('referrerpolicy', "no-referrer-when-downgrade");
-        image.setAttribute('referrerpolicy', "no-referrer-when-downgrade");
 
 
         let place = document.createElement('p');
@@ -72,32 +71,35 @@ const sortBy = templeList => {
     reset();
 
     const filter = document.querySelector('#sortBy').value;
+    const usa = [" Hawaii", " CA", " California", " Nevada", " Alaska"]
 
     switch (filter) {
 
         case "utah":
             displayTemples(
-                templeList.filter(item => item.location.includes('Hawaii'))
+                /* data.features.filter(item => item.properties.place.split(",")[1] == ' Hawaii') */
+                data.features.filter(item => usa.includes(item.properties.place.split(",")[1]))
             );
 
             break;
 
         case "notutah":
             displayTemples(
-                templeList.filter(item => !item.location.includes('Utah'))
+                /* data.features.filter(item => !item.location.includes('Utah')) */
+                data.features.filter(item => !usa.includes(item.properties.place.split(",")[1]))
             );
 
             break;
 
         case "older":
             displayTemples(
-                data.features.filter(item => Math.ceil(item.properties.mag) >= 5.0)
+                data.features.filter(item => parseFloat(item.properties.mag) >= 5.0)
             );
 
             break;
 
         case "all":
-            displayTemples(templeList);
+            displayTemples(data.features);
     };
 }
 
