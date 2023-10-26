@@ -23,9 +23,17 @@ const displayTemples = templeList => {
         let h3 = document.createElement('h3');
         h3.textContent = `Magnitude: ${item.properties.mag}`;
 
+        let lat = item.geometry.coordinates[0];
+        let lon = item.geometry.coordinates[1];
+
+        let src = `https://maps.google.com/maps?q=${lat},${lon}&h1=us;z=14&output=embed&z=5`;
+
+        /* src="https://maps.google.com/maps?q={lat},{lon}&h1=us;z=14&output=embed"  */
+
+        /* <iframe src="https://maps.google.com/maps?q=38.8213348,-122.8531647&h1=us;z=14&output=embed&z=5" height="300" width="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Iframe Example"></iframe> */
         let image = document.createElement('iframe');
-        image.setAttribute('src', item.imageUrl);
-        image.setAttribute('alt', item.location);
+        image.setAttribute('src', src);
+        image.setAttribute('height', "300");
 
         let place = document.createElement('p');
         place.textContent = item.properties.place
