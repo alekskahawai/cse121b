@@ -33,8 +33,8 @@ const displayTemples = templeList => {
         /* <iframe src="https://maps.google.com/maps?q=38.8213348,-122.8531647&h1=us;z=14&output=embed&z=5" height="300" width="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Iframe Example"></iframe> */
         let image = document.createElement('iframe');
         image.setAttribute('src', src);
-        image.setAttribute('height', "300");
-        image.setAttribute('width', "400");
+        image.setAttribute('width', "600");
+        image.setAttribute('height', "450");
         image.setAttribute('style', "border:0;");
         image.setAttribute('allowfullscreen', "");
         image.setAttribute('loading', "lazy");

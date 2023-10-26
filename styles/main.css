@@ -248,16 +248,16 @@ footer {
 
 #temples {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(650px, 1fr));
+    grid-gap: .5rem;
     align-items: center;
     margin-bottom: 3rem;
 }
 
 #temples article {
-    height: 300px;
-    width: 450px;
-    margin: 1.5rem;
+    height: 500px;
+    width: 650px;
+    margin: .5rem;
     border: 1px solid rgba(0, 0, 0, .1);
     padding: 1rem;
     background-color: #eee;
@@ -273,7 +273,7 @@ footer {
 }
 
 #temples article iframe {
-    margin: .5rem;
+    margin: .25rem;
 }
 
 #temples article p {
