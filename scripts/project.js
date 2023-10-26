@@ -8,7 +8,7 @@ const getData = async () => {
 
     data = await response.json();
 
-    console.log(data.features);
+    // console.log(data.features);
     displayTemples(data.features);
 }
 
@@ -22,6 +22,10 @@ const displayTemples = templeList => {
 
         let h3 = document.createElement('h3');
         h3.textContent = `Magnitude: ${item.properties.mag}`;
+
+        let timestamp = document.createElement('p');
+        let time = new Date(item.properties.time).toUTCString();
+        timestamp.textContent = time;
 
         let lat = item.geometry.coordinates[1];
         let lon = item.geometry.coordinates[0];
@@ -46,6 +50,7 @@ const displayTemples = templeList => {
         place.textContent = item.properties.place
 
         article.appendChild(h3);
+        article.appendChild(timestamp);
         article.appendChild(image);
         article.appendChild(place);
 
