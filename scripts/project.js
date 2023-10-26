@@ -21,7 +21,7 @@ const displayTemples = templeList => {
         let article = document.createElement('article');
 
         let h3 = document.createElement('h3');
-        h3.textContent = item.templeName;
+        h3.textContent = item.properties.place;
 
         let image = document.createElement('img');
         image.setAttribute('src', item.imageUrl);
