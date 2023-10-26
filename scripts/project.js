@@ -32,6 +32,8 @@ const displayTemples = templeList => {
 
         let src = `https://maps.google.com/maps?q=${lat},${lon}&h1=us;z=14&output=embed&z=5`;
 
+        /* let src = `https://maps.google.com/maps?q=38.8213348,-122.8531647&h1=us;z=14&output=embed&z=5`; */
+
         /* src="https://maps.google.com/maps?q={lat},{lon}&h1=us;z=14&output=embed"  */
 
         /* <iframe src="https://maps.google.com/maps?q=38.8213348,-122.8531647&h1=us;z=14&output=embed&z=5" height="300" width="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Iframe Example"></iframe> */
@@ -75,7 +77,7 @@ const sortBy = templeList => {
 
         case "utah":
             displayTemples(
-                templeList.filter(item => item.location.includes('Utah'))
+                templeList.filter(item => item.location.includes('Hawaii'))
             );
 
             break;
@@ -89,7 +91,7 @@ const sortBy = templeList => {
 
         case "older":
             displayTemples(
-                templeList.filter(item => new Date(item.dedicated) < new Date(1950, 0, 1))
+                data.features.filter(item => Math.ceil(item.properties.mag) >= 5.0)
             );
 
             break;
