@@ -1,14 +1,15 @@
 const templesElement = document.querySelector('div');
 const dataURL = 'https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson';
-/* async getTemples Function using fetch()*/
-const getTemples = async () => {
+
+
+const getData = async () => {
 
     const response = await fetch(dataURL);
 
-    templeList = await response.json();
+    data = await response.json();
 
-    console.log(templeList);
-    // displayTemples(templeList);
+    console.log(data.features);
+    displayTemples(data.features);
 }
 
 let templeList = [];
@@ -75,7 +76,7 @@ const sortBy = templeList => {
 }
 
 
-getTemples();
+getData();
 
 /* Event Listener */
 document.querySelector('#sortBy').addEventListener('change', () => {
